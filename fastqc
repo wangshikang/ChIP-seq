@@ -1,0 +1,3 @@
+for f in $(ls *.fastq)
+do fastqc $f
+done
