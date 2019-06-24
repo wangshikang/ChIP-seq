@@ -11,9 +11,9 @@ paste 1 2 > config
 dir=$wkd/bowtie2
 cat config |while read id
 do
-    arr=(${id})
-    fq1=${arr[0]}
-    fq2=${arr[1]}
-    echo $dir $fq1 $fq2
-    nohup bowtie2 -p 10 -x /data4/genome_index/mm10/tophat2/Mus_musculus/UCSC/mm10/Sequence/Bowtie2Index/genome -1 $fq1.fastq -2 $fq2.fastq -S $dir/$fq1.sam
+arr=(${id})
+fq1=${arr[0]}
+fq2=${arr[1]}
+echo $dir $fq1 $fq2
+nohup bowtie2 -p 10 -x /data4/genome_index/mm10/tophat2/Mus_musculus/UCSC/mm10/Sequence/Bowtie2Index/genome -1 $fq1.fastq -2 $fq2.fastq -S $dir/$fq1.sam
 done
