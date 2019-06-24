@@ -10,9 +10,9 @@ paste 1 2 > config
 dir=$wkd/cutadapt
 cat config |while read id
 do
-    arr=(${id})
-    fq1=${arr[0]}
-    fq2=${arr[1]}
-    echo $dir $fq1 $fq2
-    nohup cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -u 0 -u -10 -U 0 -U -10 -m 30 -o $fq1.fastq -p $fq2.fastq $fq1.fq.gz $fq2.fq.gz -j 5 &
+arr=(${id})
+fq1=${arr[0]}
+fq2=${arr[1]}
+echo $dir $fq1 $fq2
+nohup cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -u 0 -u -10 -U 0 -U -10 -m 30 -o $fq1.fastq -p $fq2.fastq $fq1.fq.gz $fq2.fq.gz -j 5 &
 done
