@@ -34,3 +34,13 @@ for a in $(ls ./*rmdup.bam)
 do  
 nohup samtools index $a -@ 8 &
 done
+
+#bamtobed
+find . -name "*rmdup.bam" |grep -v '\._' |cut -c 1-14 |sort > 1
+cat 1 |while read id
+do
+arr=(${id})
+bam=${arr[0]}
+echo $bam
+nohup bedtools bamtobed -i $bam.rmdup.bam > $bam.bed &
+done
