@@ -1,11 +1,11 @@
-nohup bedtools intersect -a NC_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq--1.bed -wa -c > NC_K27ac_intersect.txt &
-nohup bedtools intersect -a NC_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq--5.bed -wa -c > NC_input_intersect.txt &
+nohup bedtools intersect -a NC_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq-1.bed -wa -c > NC_K27ac_intersect.txt &
+nohup bedtools intersect -a NC_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq-5.bed -wa -c > NC_input_intersect.txt &
 
-nohup bedtools intersect -a UNC_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq--2.bed -wa -c > UNC_K27ac_intersect.txt &
-nohup bedtools intersect -a UNC_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq--6.bed -wa -c > UNC_input_intersect.txt &
+nohup bedtools intersect -a UNC_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq-2.bed -wa -c > UNC_K27ac_intersect.txt &
+nohup bedtools intersect -a UNC_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq-6.bed -wa -c > UNC_input_intersect.txt &
 
-nohup bedtools intersect -a HSV_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq--3.bed -wa -c > HSV_K27ac_intersect.txt &
-nohup bedtools intersect -a HSV_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq--7.bed -wa -c > HSV_input_intersect.txt &
+nohup bedtools intersect -a HSV_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq-3.bed -wa -c > HSV_K27ac_intersect.txt &
+nohup bedtools intersect -a HSV_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq-7.bed -wa -c > HSV_input_intersect.txt &
 
-nohup bedtools intersect -a UNC_HSV_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq--4.bed -wa -c > UNC_HSV_K27ac_intersect.txt &
-nohup bedtools intersect -a UNC_HSV_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq--8.bed -wa -c > UNC_HSV_input_intersect.txt &
+nohup bedtools intersect -a UNC_HSV_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq-4.bed -wa -c > UNC_HSV_K27ac_intersect.txt &
+nohup bedtools intersect -a UNC_HSV_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq-8.bed -wa -c > UNC_HSV_input_intersect.txt &
