@@ -15,3 +15,9 @@ nohup macs2 callpeak -t K27ac-seq--1.bed -c K27ac-seq--5.bed --outdir ./macs2 -n
 nohup macs2 callpeak -t K27ac-seq--2.bed -c K27ac-seq--6.bed --outdir ./macs2 -n UNC -g hs -B --nomodel -p 1E-10 --broad --keep-dup all --broad-cutoff 1E-7 --extsize 147 &
 nohup macs2 callpeak -t K27ac-seq--3.bed -c K27ac-seq--7.bed --outdir ./macs2 -n HSV -g hs -B --nomodel -p 1E-10 --broad --keep-dup all --broad-cutoff 1E-7 --extsize 147 &
 nohup macs2 callpeak -t K27ac-seq--4.bed -c K27ac-seq--8.bed --outdir ./macs2 -n UNC_HSV -g hs -B --nomodel -p 1E-10 --broad --keep-dup all --broad-cutoff 1E-7 --extsize 147 &
+
+#annotation
+annotatePeaks.pl NC_peaks.broadPeak hg38 > ./annotation/NC_peaks._annotation.bed
+annotatePeaks.pl UNC_peaks.broadPeak hg38 > ./annotation/UNC_peaks._annotation.bed
+annotatePeaks.pl HSV_peaks.broadPeak hg38 > ./annotation/HSV_peaks._annotation.bed
+annotatePeaks.pl UNC_HSV_peaks.broadPeak hg38 > ./annotation/UNC_HSV_peaks._annotation.bed
