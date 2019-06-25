@@ -5,3 +5,5 @@ do
 arr=(${id})
 sam=${arr[0]}
 echo $sam
+nohup samtools view -b $sam.sam -o $sam.bam &
+done
