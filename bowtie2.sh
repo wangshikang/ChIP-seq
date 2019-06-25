@@ -15,5 +15,5 @@ arr=(${id})
 fq1=${arr[0]}
 fq2=${arr[1]}
 echo $dir $fq1 $fq2
-nohup bowtie2 -p 10 -x /data3/wangshikang/reference/TopHat/bowtie2index/Homo_sapiens.GRCh38/genome -1 $fq1.fastq -2 $fq2.fastq -S $dir/$fq1.sam
+nohup bowtie2 -p 10 -x /data3/wangshikang/reference/TopHat/bowtie2index/Homo_sapiens.GRCh38/genome -1 $fq1.fastq -2 $fq2.fastq -S ./$fq1.sam &
 done
