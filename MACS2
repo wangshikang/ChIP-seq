@@ -1,0 +1,17 @@
+find . -name "*.bed" |grep -E "\-1|\-2|\-3|\-4" |cut -c 1-14 |sort > 1
+find . -name "*.bed" |grep -E "\-5|\-6|\-7|\-8" |cut -c 1-14 |sort > 2
+paste 1 2 > config
+cat config |while read id
+do
+arr=(${id})
+chip=${arr[0]}
+input=${arr[1]}
+echo $chip $input
+nohup macs2 callpeak -t $chip.bed -c $input.bed --outdir ./macs2 -n $treat??????????? -g hs -B --nomodel -p 1E-10 --broad --keep-dup all --broad-cutoff 1E-7 --extsize 147 &
+done
+
+
+nohup macs2 callpeak -t K27ac-seq--1.bed -c K27ac-seq--5.bed --outdir ./macs2 -n NC -g hs -B --nomodel -p 1E-10 --broad --keep-dup all --broad-cutoff 1E-7 --extsize 147 &
+nohup macs2 callpeak -t K27ac-seq--2.bed -c K27ac-seq--6.bed --outdir ./macs2 -n UNC -g hs -B --nomodel -p 1E-10 --broad --keep-dup all --broad-cutoff 1E-7 --extsize 147 &
+nohup macs2 callpeak -t K27ac-seq--3.bed -c K27ac-seq--7.bed --outdir ./macs2 -n HSV -g hs -B --nomodel -p 1E-10 --broad --keep-dup all --broad-cutoff 1E-7 --extsize 147 &
+nohup macs2 callpeak -t K27ac-seq--4.bed -c K27ac-seq--8.bed --outdir ./macs2 -n UNC_HSV -g hs -B --nomodel -p 1E-10 --broad --keep-dup all --broad-cutoff 1E-7 --extsize 147 &
