@@ -1,0 +1,8 @@
+find . -name "*peaks_signal.txt" |grep -v '\._' |cut -d '_' -f 1,2 > 1
+cat 1 |while read id
+do
+arr=(${id})
+name=${arr[0]}
+echo $name
+nohup awk '{for (i=2;i<=NF;++i){sum[i]+=$i}colum = NF;row = NR} END {printf ("average: \t");for (i=2; i<= colum; ++i){printf("%.2f \t", sum[i]/row);}print ""}' $name_peaks_signal.txt > $name_signal.txt &
+done
