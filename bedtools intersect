@@ -9,3 +9,5 @@ nohup bedtools intersect -a HSV_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq-7.b
 
 nohup bedtools intersect -a UNC_HSV_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq-4.bed -wa -c > UNC_HSV_K27ac_intersect.txt &
 nohup bedtools intersect -a UNC_HSV_peaks_bin.bed -b ~/chenlin/bowtie2/K27ac-seq-8.bed -wa -c > UNC_HSV_input_intersect.txt &
+
+#用nohup-&时bedtools会把报错信息写进输出文件中，而不是nohup.out中（不知道为什么）
